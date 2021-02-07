@@ -17,3 +17,19 @@ def data_insert(dados):
     
     curr.execute('INSERT INTO registro (nome, status) VALUES (?,?)', dados)
     conn.commit()
+
+def data_read_all():
+    curr.execute('SELECT * FROM registro')
+    dados = curr.fetchall()
+    
+    for linha in dados:
+        print(linha)
+
+def data_read_nome():
+    curr.execute('SELECT nome FROM registro')
+    dados = curr.fetchall()
+    
+    for linha in dados:
+        print(linha)
+
+        
